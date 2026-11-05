@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QuickServe | Café Ordering & Management</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="side" aria-label="Main">
+  <div class="brand">☕ QuickServe</div>
+  <button data-view="dashboard" class="on">📊<em>Dashboard</em></button>
+  <button data-view="menu">🍽️<em>Menu & Order</em></button>
+  <button data-view="orders">🧾<em>Active Orders</em><u id="nOrders"></u></button>
+  <button data-view="kitchen">👨‍🍳<em>Kitchen</em></button>
+  <button data-view="tables">🪑<em>Tables</em></button>
+  <button data-view="billing">💳<em>Billing</em></button>
+</nav>
+<main>
+  <header class="top">
+    <div><h1 id="title"></h1><p id="sub"></p></div>
+    <time id="clock"></time>
+  </header>
+  <div id="banner" role="alert" hidden></div>
+  <section class="view" id="v-dashboard"></section>
+  <section class="view" id="v-menu" hidden>
+    <div class="split">
+      <div>
+        <div class="bar"><input id="search" type="search" placeholder="Search the menu" autocomplete="off"><div class="chips" id="chips"></div></div>
+        <div class="grid" id="items"></div>
+      </div>
+      <aside class="card cart" id="cart"></aside>
+    </div>
+    <a id="fab" href="#cart" hidden></a>
+  </section>
+  <section class="view" id="v-orders" hidden></section>
+  <section class="view" id="v-kitchen" hidden></section>
+  <section class="view" id="v-tables" hidden></section>
+  <section class="view" id="v-billing" hidden></section>
+</main>
+<div id="toast" role="status"></div>
+<dialog id="receipt"></dialog>
+<script src="js/api.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/orders.js"></script>
+<script src="js/kitchen.js"></script>
+<script src="js/tables.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
